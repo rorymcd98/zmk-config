@@ -37,7 +37,7 @@
    &trans &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M   &kp COMMA &kp DOT &kp SLASH &trans
                 &trans  &trans     &trans     &trans  &trans  &trans
                         >;
-                };
+                };_-#~#####v#~#-#
                 lower_layer {
 // -----------------------------------------------------------------------------------------
 // |      |  !  |  "  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |    |
@@ -47,8 +47,8 @@
                         bindings = <
    &trans    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR   &kp RPAR   &kp TILDE
    &trans   &kp N1    &kp N2  &kp N3    &kp N4   &kp N5   &kp N6 &kp N7  &kp N8    &kp N9    &kp N0    &trans
-   &kp GRAVE   &kp UNDER   &kp MINUS   &kp NON_US_HASH   &kp PIPE  &kp BACKSLASH &kp LBKT  &kp  LBRC  &trans  &trans  &kp RBKT  &kp  RBRC
-                                   &trans  &trans     &trans     &kp DEL  &trans  &trans
+   &kp GRAVE   &kp NON_US_HASH   &kp PIPE2    &kp UNDER   &kp MINUS &kp KC_NONUS_BSLASH &kp LBKT  &kp  LBRC  &trans  &trans  &kp RBKT  &kp  RBRC
+                                   &trans  &trans     &trans     &kp BKSP  &trans  &trans
                         >;
                 };
 
@@ -62,7 +62,7 @@
    &trans    &kp C_AC_ZOOM_IN  &kp C_AC_ZOOM_OUT  &kp D    &kp U    &kp PAGE_UP   &kp H    &kp J  &kp K  &kp L &trans  &trans
    &trans    &kp HOME  &kp END  &trans  &trans  &kp PAGE_DOWN   &kp LEFT_ARROW &kp DOWN_ARROW &kp UP_ARROW  &kp RIGHT_ARROW &trans &trans
    &trans    &kp TILDE  &kp GRAVE  &kp NON_US_HASH  &kp PIPE  &kp BACKSLASH &kp LBRC  &kp LBKT  &trans  &trans  &kp RBRC &kp RBKT
-                             &trans    &trans    &kp DEL    &trans  &trans  &trans
+                             &trans    &trans    &kp BKSP    &trans  &trans  &trans
                         >;
                 };
 

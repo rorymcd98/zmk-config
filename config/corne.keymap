@@ -21,8 +21,21 @@
                         bindings = <
    &kp LALT   &kp B &kp L &kp D &kp W &kp Z   &kp SQT &kp F   &kp O   &kp U  &kp J   &kp DEL
    &kp LCTRL &kp N &kp R &kp T &kp S &kp G   &kp Y   &kp H   &kp A   &kp E  &kp I   &kp SEMI
-   &kp ESC   &kp Q &kp X &kp M &kp C &kp V   &kp K   &kp P   &kp COMMA &kp DOT &kp FSLH  &mo 3
-                  &kp LSHFT &mt LGUI RET &lt 1 BKSP   &lt 2 TAB &kp SPACE &mt RCTRL ESC
+   &kp ESC   &kp Q &kp X &kp M &kp C &kp V   &kp K   &kp P   &kp COMMA &kp DOT &kp FSLH  &mo function_layer
+        &kp LSHFT &mt LGUI RET &lt lower_layer BKSP   &lt raise_layer TAB &kp SPACE &mt RCTRL ESC
+                        >;
+                };
+                qwerty_layer {
+// -----------------------------------------------------------------------------------------
+// | TAB  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  |  [   |
+// | CAPS  |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  ;  |  '  |
+// | SHFT   |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  |  SHFT |
+//                    | SHFT| GUI | LWR |   |RSE  | SPC | RCTRL|
+                        bindings = <
+   &trans  &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U   &kp I   &kp O  &kp P   &trans
+   &trans &kp A &kp S &kp D &kp F &kp G   &kp H &kp J   &kp K   &kp L  &kp SCLN &trans
+   &trans &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M   &kp COMMA &kp DOT &kp SLASH &trans
+                &trans  &trans     &trans     &trans  &trans  &trans
                         >;
                 };
                 lower_layer {
@@ -56,12 +69,12 @@
                 function_layer {
 // -----------------------------------------------------------------------------------------
 // |      |  F1 |  F2 |  F3 |  F4 |  F5 |6|  F7 |  F8 |  F9  |  F10|     |    |
-// |      |  F11|  F12|     |     |     |KPINS|KP_+ |   |   |   |   |    |
+// |      |  F11|  F12|  QWERTY_SW |     |     |KPINS|KP_+ |   |   |   |   |    |
 // |      | SLP |     |     |     |CAPS|KP-> |KP-> |  |                          |
 //                    |     |     |     |   |     |     |     |
                         bindings = <
    &trans   &kp  F1  &kp F2 &kp F3 &kp F4 &kp F5 &kp F6   &kp F7 &kp F8  &kp F9 &kp F10 &trans
-   &trans   &kp F11   &kp F12 &trans   &trans   &trans      &kp INSERT &kp K_PP &trans  &trans &trans &trans
+   &trans   &kp F11   &kp F12 &tg qwerty_layer &trans   &trans      &kp INSERT &kp K_PP &trans  &trans &trans &trans
    &trans   &kp K_SLEEP &trans &trans   &trans   &kp CAPS   &kp K_PREV &kp K_NEXT  &kp K_MUTE &kp K_VOL_DOWN &kp K_VOL_UP &trans
                              &trans     &trans       &trans      &trans  &trans   &trans
                         >;

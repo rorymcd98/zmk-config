@@ -22,7 +22,7 @@
    &kp LALT   &kp B &kp L &kp D &kp W &kp Z   &kp SQT &kp F   &kp O   &kp U  &kp J   &kp DEL
    &kp LCTRL &kp N &kp R &kp T &kp S &kp G   &kp Y   &kp H   &kp A   &kp E  &kp I   &kp SEMI
    &kp ESC   &kp Q &kp X &kp M &kp C &kp V   &kp K   &kp P   &kp COMMA &kp DOT &kp FSLH  &mo 4
-        &kp LGUI ESC  &mt LSHFT RET &lt 2 BKSP   &lt 3 TAB &kp SPACE &mt RSHFT BKSP
+        &mt LGUI ESC  &mt LSHFT RET &lt 2 BKSP   &lt 3 TAB &kp SPACE &mt RSHFT BKSP
                         >;
                 };
                 qwerty_layer {

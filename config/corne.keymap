@@ -61,7 +61,7 @@
                         bindings = <
    &trans    &kp C_AC_ZOOM_IN  &kp C_AC_ZOOM_OUT  &kp D    &kp U    &kp PAGE_UP   &kp H    &kp J  &kp K  &kp L &trans  &trans
    &trans    &kp HOME  &kp END  &trans  &trans  &kp PAGE_DOWN   &kp LEFT_ARROW &kp DOWN_ARROW &kp UP_ARROW  &kp RIGHT_ARROW &trans &trans
-   &trans    &kp TILDE  &kp GRAVE  &kp NON_US_HASH  &kp PIPE  &kp BACKSLASH &kp LBRC  &kp LBKT  &trans  &trans  &kp RBRC &kp RBKT
+   &kp ESC    &kp TILDE  &kp GRAVE  &kp NON_US_HASH  &kp PIPE  &kp BACKSLASH &kp LBRC  &kp LBKT  &trans  &trans  &kp RBRC &kp RBKT
                              &trans   &trans  &kp BKSP    &trans  &trans  &trans
                         >;
                 };

@@ -33,7 +33,7 @@
 //                    | SHFT| GUI | LWR |   |RSE  | SPC | RCTRL|
                         bindings = <
    &trans  &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U   &kp I   &kp O  &kp P   &trans
-   &trans &kp A &kp S &kp D &kp F &kp G   &kp H &kp J   &kp K   &kp L  &kp SCLN &trans
+   &trans &kp A &kp S &kp D &kp F &kp G   &kp H &kp J   &kp K   &kp L  &kp SCLN &kp ESC
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M   &kp COMMA &kp DOT &kp SLASH &trans
                 &kp SPACE  &mt LGUI RET  &lt 2 BKSP    &trans  &trans  &trans
                         >;

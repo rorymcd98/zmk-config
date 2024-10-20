@@ -16,64 +16,66 @@
 #define FUNCTION 5
 #define BLUETOOTH 6
 
-/macros {
-    ctrl_tab: ctrl_tab {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings
-            = <&macro_press &kp LCTRL>
-            , <&macro_tap &kp TAB>
-            , <&macro_release &kp LCTRL>
-            ;
-    };
+/{
+        macros {
+                ctrl_tab: ctrl_tab {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings
+                        = <&macro_press &kp LCTRL>
+                        , <&macro_tap &kp TAB>
+                        , <&macro_release &kp LCTRL>
+                        ;
+                };
 
-    ctrl_shift_tab: ctrl_shift_tab {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings
-            = <&macro_press &kp LCTRL &kp LSHFT>
-            , <&macro_tap &kp TAB>
-            , <&macro_release &kp LCTRL &kp LSHFT>
-            ;
-    };
+                ctrl_shift_tab: ctrl_shift_tab {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings
+                        = <&macro_press &kp LCTRL &kp LSHFT>
+                        , <&macro_tap &kp TAB>
+                        , <&macro_release &kp LCTRL &kp LSHFT>
+                        ;
+                };
 
-    alt_tab: alt_tab {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings
-            = <&macro_press &kp LALT>
-            , <&macro_tap &kp TAB>
-            , <&macro_release &kp LALT>
-            ;
-    };
+                alt_tab: alt_tab {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings
+                        = <&macro_press &kp LALT>
+                        , <&macro_tap &kp TAB>
+                        , <&macro_release &kp LALT>
+                        ;
+                };
 
-    alt_shift_tab: alt_shift_tab {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings
-            = <&macro_press &kp LALT &kp LSHFT>
-            , <&macro_tap &kp TAB>
-            , <&macro_release &kp LALT &kp LSHFT>
-            ;
-    };
+                alt_shift_tab: alt_shift_tab {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings
+                        = <&macro_press &kp LALT &kp LSHFT>
+                        , <&macro_tap &kp TAB>
+                        , <&macro_release &kp LALT &kp LSHFT>
+                        ;
+                };
 
-    ctrl_plus: ctrl_plus {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings
-            = <&macro_press &kp LCTRL &kp EQUAL>
-            , <&macro_release &kp LCTRL &kp EQUAL>
-            ;
-    };
+                ctrl_plus: ctrl_plus {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings
+                        = <&macro_press &kp LCTRL &kp EQUAL>
+                        , <&macro_release &kp LCTRL &kp EQUAL>
+                        ;
+                };
 
-    ctrl_minus: ctrl_minus {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings
-            = <&macro_press &kp LCTRL &kp MINUS>
-            , <&macro_release &kp LCTRL &kp MINUS>
-            ;
-    };
+                ctrl_minus: ctrl_minus {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings
+                        = <&macro_press &kp LCTRL &kp MINUS>
+                        , <&macro_release &kp LCTRL &kp MINUS>
+                        ;
+                };
+        };
 };
 
 

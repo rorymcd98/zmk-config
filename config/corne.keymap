@@ -145,7 +145,7 @@
 //                    |     |     |     |   |     |     |     |
                         bindings = <
    &trans    &ctrl_minus   &ctrl_plus &ctrl_shift_tab  &ctrl_tab &kp HOME  &kp H   &kp J  &kp K  &kp L &trans  &trans
-   &trans    &alt_shift_tab      &alt_tab    &PAGE_UP  &kp PAGE_DOWN  &kp END   &kp LEFT_ARROW &kp DOWN_ARROW &kp UP_ARROW  &kp RIGHT_ARROW &trans &trans
+   &trans    &alt_shift_tab      &alt_tab    &kp PAGE_UP  &kp PAGE_DOWN  &kp END   &kp LEFT_ARROW &kp DOWN_ARROW &kp UP_ARROW  &kp RIGHT_ARROW &trans &trans
    &kp ESC   &trans   &trans    &trans   &trans &trans            &trans  &trans &trans &trans &trans &trans
                                         &trans   &trans  &kp BKSP    &trans  &trans  &trans
                         >;

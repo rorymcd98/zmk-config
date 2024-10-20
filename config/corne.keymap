@@ -8,6 +8,76 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define DEFAULT 0
+#define GAMING 1
+#define QWERTY 2
+#define LOWER 3
+#define RAISE 4
+#define FUNCTION 5
+#define BLUETOOTH 6
+
+/macros {
+    ctrl_tab: ctrl_tab {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LCTRL>
+            , <&macro_tap &kp TAB>
+            , <&macro_release &kp LCTRL>
+            ;
+    };
+
+    ctrl_shift_tab: ctrl_shift_tab {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LCTRL &kp LSHFT>
+            , <&macro_tap &kp TAB>
+            , <&macro_release &kp LCTRL &kp LSHFT>
+            ;
+    };
+
+    alt_tab: alt_tab {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LALT>
+            , <&macro_tap &kp TAB>
+            , <&macro_release &kp LALT>
+            ;
+    };
+
+    alt_shift_tab: alt_shift_tab {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LALT &kp LSHFT>
+            , <&macro_tap &kp TAB>
+            , <&macro_release &kp LALT &kp LSHFT>
+            ;
+    };
+
+    ctrl_plus: ctrl_plus {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LCTRL &kp EQUAL>
+            , <&macro_release &kp LCTRL &kp EQUAL>
+            ;
+    };
+
+    ctrl_minus: ctrl_minus {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LCTRL &kp MINUS>
+            , <&macro_release &kp LCTRL &kp MINUS>
+            ;
+    };
+};
+
+
+
 / {
         keymap {
                 compatible = "zmk,keymap";
@@ -21,11 +91,11 @@
                         bindings = <
    &kp LALT   &kp B &kp L &kp D &kp W &kp Z   &kp SQT &kp F   &kp O   &kp U  &kp J   &kp DEL
    &kp LCTRL &kp N &kp R &kp T &kp S &kp G   &kp Y   &kp H   &kp A   &kp E  &kp I   &kp SEMI
-   &mt LSHFT ESC   &kp Q &kp X &kp M &kp C &kp V   &kp K   &kp P   &kp COMMA &kp DOT &kp FSLH  &mo 4
-        &mt LGUI ESC  &mt LSHFT BKSP &lt 2 RET   &lt 3 TAB &kp SPACE &mt RSHFT BKSP
+   &mt LSHFT ESC   &kp Q &kp X &kp M &kp C &kp V   &kp K   &kp P   &kp COMMA &kp DOT &kp FSLH  &mo FUNCTION
+        &mt LGUI ESC  &mt LSHFT BKSP &lt LOWER RET   &lt RAISE TAB &kp SPACE &mt RSHFT BKSP
                         >;
                 };
-                qwerty_layer {
+                gaming_layer {
 // -----------------------------------------------------------------------------------------
 // | ALT  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  |  [   |
 // | CTRL  |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  ;  |  '  |
@@ -33,9 +103,22 @@
 //                    | SHFT| GUI | LWR |   |RSE  | SPC | RCTRL|
                         bindings = <
    &trans  &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U   &kp I   &kp O  &kp P   &trans
-   &trans &kp A &kp S &kp D &kp F &kp G   &kp H &kp J   &kp K   &kp L  &kp SCLN &trans
+   &trans &kp A &kp S &kp D &kp F &kp G   &kp H &kp J   &kp K   &kp L  &kp SCLN &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M   &kp COMMA &kp DOT &kp SLASH &trans
-                &kp SPACE  &mt LGUI RET  &lt 2 BKSP    &trans  &trans  &trans
+                &kp SPACE  &mt LGUI RET  &lt LOWER BKSP    &trans  &trans  &trans
+                        >;
+                };
+                qwerty_layer {
+// -----------------------------------------------------------------------------------------
+// | ALT  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  |  DEL   |
+// | CTRL  |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  ;  |  '  |
+// | ESC   |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  |  SHFT |
+//    LShift | GUI / Ent | LWR / Backspace |   |RSE / Tab | SPC | RCTRL / Esc  |
+                        bindings = <
+   &trans  &kp Q &kp W &kp E &kp R &kp T  &kp Y &kp U   &kp I   &kp O  &kp P   &trans
+   &trans &kp A &kp S &kp D &kp F &kp G   &kp H &kp J   &kp K   &kp L  &kp SCLN &kp SQT
+   &trans &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M   &kp COMMA &kp DOT &kp SLASH &trans
+                &trans  &trans &trans     &trans &trans &trans
                         >;
                 };
                 lower_layer {
@@ -54,37 +137,37 @@
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// |ZOOM+ |ZOOM-|     |     |     |PGUP |   |     |     |     |     |     |    |
+// |ZOOM- |ZOOM+|     |     |     |PGUP |   |     |     |     |     |     |    |
 // |HOME  |END  |     |     |PGDN |     |   |LEFT |DOWN |  UP |RGHT |     |    |
-// |      |  ~  |  `  |     |     |CAPS |   |PREV |NEXT |MUTE |VLDN |VLUP |    |
+// |      |  ~  |  `  |     |     |     |   |PREV |NEXT |MUTE |VLDN |VLUP |    |
 //                    |     |     |     |   |     |     |     |
                         bindings = <
-   &trans    &kp C_AC_ZOOM_IN  &kp C_AC_ZOOM_OUT  &kp D    &kp U    &kp PAGE_UP   &kp H    &kp J  &kp K  &kp L &trans  &trans
-   &trans    &kp HOME  &kp END  &trans  &trans  &kp PAGE_DOWN   &kp LEFT_ARROW &kp DOWN_ARROW &kp UP_ARROW  &kp RIGHT_ARROW &trans &trans
-   &kp ESC    &kp TILDE  &kp GRAVE  &kp NON_US_HASH  &kp PIPE  &kp BACKSLASH &kp LBRC  &kp LBKT  &trans  &trans  &kp RBRC &kp RBKT
-                             &trans   &trans  &kp BKSP    &trans  &trans  &trans
+   &trans    &kp ctrl_minus   &kp ctrl_plus &ctrl_shift_tab  &ctrl_tab &kp HOME  &kp H   &kp J  &kp K  &kp L &trans  &trans
+   &trans    &alt_shift_tab      &alt_tab    &PAGE_UP  &kp PAGE_DOWN  &kp END   &kp LEFT_ARROW &kp DOWN_ARROW &kp UP_ARROW  &kp RIGHT_ARROW &trans &trans
+   &kp ESC   &trans   &trans    &trans   &trans &trans            &trans  &trans &trans &trans &trans &trans
+                                        &trans   &trans  &kp BKSP    &trans  &trans  &trans
                         >;
                 };
 
                 function_layer {
 // -----------------------------------------------------------------------------------------
-// |      |  F1 |  F2 |  F3 |  F4 |  F5 |6|  F7 |  F8 |  F9  |  F10|     |    |
-// |      |  F11|  F12|  QWERTY_SW |     |     |KPINS|KP_+ |   |   |   |   |    |
-// |      | SLP |     |     |     |CAPS|KP-> |KP-> |  |                          |
-//                    |     |     |     |   |     |     |     |
+// |      |  F1 |  F2 |  F3 |  F4 |  F5 |F6   |  F7 |  F8 |  F9  |  F10|     |    |
+// |      |  F11|  F12| gme |     |     |KPINS|KP_+ |   |   |   |   |    |
+// |      | SLP |     |     |     |CAPS |KP-> |KP-> |  |                          |
+//                    |     |     |     |     |     |     |     |
                         bindings = <
-   &trans   &kp  F1  &kp F2 &kp F3 &kp F4 &kp F5 &kp F6   &kp F7 &kp F8  &kp F9 &kp F10 &kp PRINTSCREEN
-   &trans   &kp F11   &kp F12 &tog 1 &trans   &trans      &kp INSERT &kp C_PP &trans  &trans &trans &trans
-   &trans   &trans &trans &tog 5   &trans   &kp CAPS   &kp C_PREV &kp C_NEXT  &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &trans
+        &trans  &kp  F1  &kp F2 &kp F3 &kp F4 &kp F5 &kp F6   &kp F7 &kp F8  &kp F9 &kp F10 &kp PRINTSCREEN
+        &trans  &kp F11   &kp F12 &trans &trans   &trans      &trans &kp C_PP &trans  &trans &trans &trans
+        &trans  &tog BLUETOOTH  &tog GAMING &tog QWERTY   &kp INSERT   &kp CAPS   &kp C_PREV &kp C_NEXT  &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &trans
                              &trans     &trans       &trans      &trans  &trans   &trans
                         >;
                 };
                 bluetooth_layer {
                         bindings = <
-   &bt BT_CLR_ALL   &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4         &trans   &trans   &trans &trans    &trans &trans
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &trans &trans &trans &trans &trans &trans
-   &trans    &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                                    &trans     &trans    &trans      &trans  &trans   &trans
+   &bt BT_CLR_ALL   &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4         &to DEFAULT   &to DEFAULT   &to DEFAULT &to DEFAULT    &to DEFAULT &to DEFAULT
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &to DEFAULT &to DEFAULT &to DEFAULT &to DEFAULT &to DEFAULT &to DEFAULT
+   &to DEFAULT    &to DEFAULT       &to DEFAULT       &tog BLUETOOTH      &to DEFAULT       &to DEFAULT         &to DEFAULT   &to DEFAULT   &to DEFAULT &to DEFAULT    &to DEFAULT &trans
+                                    &to DEFAULT     &to DEFAULT    &to DEFAULT      &to DEFAULT  &to DEFAULT   &to DEFAULT
                         >;
                 };
         };

@@ -17,6 +17,18 @@
 #define BLUETOOTH 6
 
 /{
+            behaviors {
+                pht: positional_hold_tap {
+                    compatible = "zmk,behavior-hold-tap";
+                    #binding-cells = <2>;
+                    flavor = "hold-preferred";
+                    tapping-term-ms = <400>;
+                    quick-tap-ms = <200>;
+                    bindings = <&kp>, <&kp>;
+                    hold-trigger-key-positions = <1>;    // <---[[the W key]]
+                };
+            };
+
         macros {
                 ctrl_tab: ctrl_tab {
                         compatible = "zmk,behavior-macro";
@@ -91,7 +103,7 @@
 // |  ESC |  Q  |  X  |  M  |  C  |  V  |   |  K  |  P  |  ,  |  .  |  /  |  Fn   |
 //    LShift | GUI / Ent | LWR / Backspace |   |RSE / Tab | SPC | RCTRL / Esc  |
                         bindings = <
-   &kp LALT   &kp B &kp L &kp D &kp W &kp Z   &ht_hp SQT DQT &kp F   &kp O   &kp U  &kp J   &kp DEL
+   &kp LALT   &kp B &kp L &kp D &kp W &kp Z   &pht SQT DQT &kp F   &kp O   &kp U  &kp J   &kp DEL
    &kp LCTRL &kp N &kp R &kp T &kp S &kp G   &kp Y   &kp H   &kp A   &kp E  &kp I   &kp SEMI
    &mt LSHFT ESC   &kp Q &kp X &kp M &kp C &kp V   &kp K   &kp P   &kp COMMA &kp DOT &kp FSLH  &mo FUNCTION
         &mt LGUI ESC  &mt LSHFT BKSP &lt LOWER RET   &lt RAISE TAB &kp SPACE &mt RSHFT BKSP

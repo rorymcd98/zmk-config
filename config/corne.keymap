@@ -103,7 +103,7 @@
 // |  ESC |  Q  |  X  |  M  |  C  |  V  |   |  K  |  P  |  ,  |  .  |  /  |  Fn   |
 //    LShift | GUI / Ent | LWR / Backspace |   |RSE / Tab | SPC | RCTRL / Esc  |
                         bindings = <
-   &kp LALT   &kp B &kp L &kp D &kp W &kp Z   &pht LS(KP_N2) SQT &kp F   &kp O   &kp U  &kp J   &kp DEL
+   &kp LALT   &kp B &kp L &kp D &kp W &kp Z   &pht AT SQT &kp F   &kp O   &kp U  &kp J   &kp DEL
    &kp LCTRL &kp N &kp R &kp T &kp S &kp G   &kp Y   &kp H   &kp A   &kp E  &kp I   &kp SEMI
    &mt LSHFT ESC   &kp Q &kp X &kp M &kp C &kp V   &kp K   &kp P   &kp COMMA &kp DOT &kp FSLH  &mo FUNCTION
         &mt LGUI ESC  &mt LSHFT BKSP &lt LOWER RET   &lt RAISE TAB &kp SPACE &mt RSHFT BKSP
